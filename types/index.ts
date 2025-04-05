@@ -28,9 +28,19 @@ export interface CarProps {
 }
 
 export interface FilterProps {
-    manufacturer: string;
+    manufacturer: string | 'bmw';
     year: number;
     fuel: string;
     model:string;
     drive: string;
+}
+
+export interface OptionProps {
+    title: string,
+    value: string,
+}
+
+export interface CustomFilterProps {
+    title: string,
+    options: OptionProps[];
 }
