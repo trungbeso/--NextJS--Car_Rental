@@ -4,8 +4,15 @@ import CustomFilter from "@components/CustomFilter";
 import {fetchCars} from "@utils";
 
 
-export default async function Home() {
-    const allCars = await fetchCars();
+export default async function Home( {searchParams}) {
+    const allCars = await fetchCars({
+        manufacturer: searchParams.make || '',
+        year: searchParams.year || '',
+        fuel: searchParams.fuel || '',
+        model:searchParams.model || '',
+        drive: searchParams.drive || '',
+
+    });
 
     console.log(allCars)
 
